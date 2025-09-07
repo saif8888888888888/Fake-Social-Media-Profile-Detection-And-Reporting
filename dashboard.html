@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Fake Profile Detect</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-shield-alt"></i>
+                <span>Fake Profile Detect</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#detect">Detect</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="dashboard.html" class="active">Dashboard</a></li>
+                </ul>
+            </nav>
+            <div class="user-menu">
+                <div class="user-avatar">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="user-dropdown">
+                    <span id="username">User</span>
+                    <i class="fas fa-chevron-down"></i>
+                    <div class="dropdown-content">
+                        <a href="#"><i class="fas fa-user"></i> Profile</a>
+                        <a href="#"><i class="fas fa-cog"></i> Settings</a>
+                        <a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Dashboard Content -->
+    <div class="dashboard-container">
+        <div class="sidebar">
+            <ul class="sidebar-menu">
+                <li class="active"><a href="#"><i class="fas fa-home"></i> Overview</a></li>
+                <li><a href="#"><i class="fas fa-search"></i> Scan History</a></li>
+                <li><a href="#"><i class="fas fa-chart-bar"></i> Analytics</a></li>
+                <li><a href="#"><i class="fas fa-flag"></i> Reports</a></li>
+                <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+            </ul>
+        </div>
+
+        <div class="dashboard-content">
+            <div class="dashboard-header">
+                <h1>Dashboard Overview</h1>
+                <a href="index.html#detect" class="btn btn-primary">
+                    <i class="fas fa-plus"></i> New Scan
+                </a>
+            </div>
+
+            <div class="stats-cards">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>24</h3>
+                        <p>Total Scans</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-user-times"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>16</h3>
+                        <p>Fake Profiles</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>8</h3>
+                        <p>Genuine Profiles</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-flag"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>5</h3>
+                        <p>Reports Filed</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="charts-row">
+                <div class="chart-container">
+                    <h3>Profile Analysis Results</h3>
+                    <canvas id="resultsChart"></canvas>
+                </div>
+                
+                <div class="chart-container">
+                    <h3>Platform Distribution</h3>
+                    <canvas id="platformsChart"></canvas>
+                </div>
+            </div>
+
+            <div class="recent-scans">
+                <h3>Recent Scans</h3>
+                <div class="scans-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Profile URL</th>
+                                <th>Platform</th>
+                                <th>Date</th>
+                                <th>Result</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>https://instagram.com/john.doe</td>
+                                <td><i class="fab fa-instagram"></i> Instagram</td>
+                                <td>Oct 15, 2025</td>
+                                <td><span class="badge badge-fake">Fake</span></td>
+                                <td>
+                                    <button class="icon-btn"><i class="fas fa-eye"></i></button>
+                                    <button class="icon-btn"><i class="fas fa-download"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>https://instagram.com/jane_smith</td>
+                                <td><i class="fab fa-instagram"></i> Instagram</td>
+                                <td>Oct 14, 2025</td>
+                                <td><span class="badge badge-genuine">Genuine</span></td>
+                                <td>
+                                    <button class="icon-btn"><i class="fas fa-eye"></i></button>
+                                    <button class="icon-btn"><i class="fas fa-download"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>https://facebook.com/robert_jones</td>
+                                <td><i class="fab fa-facebook"></i> Facebook</td>
+                                <td>Oct 13, 2025</td>
+                                <td><span class="badge badge-fake">Fake</span></td>
+                                <td>
+                                    <button class="icon-btn"><i class="fas fa-eye"></i></button>
+                                    <button class="icon-btn"><i class="fas fa-download"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>https://tiktok.com/@sarah_miller</td>
+                                <td><i class="fab fa-tiktok"></i> TikTok</td>
+                                <td>Oct 12, 2025</td>
+                                <td><span class="badge badge-suspicious">Suspicious</span></td>
+                                <td>
+                                    <button class="icon-btn"><i class="fas fa-eye"></i></button>
+                                    <button class="icon-btn"><i class="fas fa-download"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/dashboard.js"></script>
+    <script src="scripts/auth.js"></script>
+</body>
+</html>

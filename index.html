@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Profile Detect</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-shield-alt"></i>
+                <span>Fake Profile Detect</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#detect">Detect</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <a href="login.html" class="btn btn-outline">Log In</a>
+                <a href="signup.html" class="btn btn-primary">Sign Up</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="scan-line"></div>
+        <div class="container">
+            <h1>Detect Fake Social Media Profiles</h1>
+            <p>Our advanced system analyzes social media profiles in real-time to detect suspicious activity, protecting you from scams and fake identities.</p>
+            <a href="#detect" class="btn btn-primary">Scan a Profile Now</a>
+        </div>
+    </section>
+
+    <!-- Detection Form -->
+    <section class="container" id="detect">
+        <div class="detection-form">
+            <h2 class="form-title">Real-time Profile Detection</h2>
+            <p style="text-align: center; margin-bottom: 30px;">Enter the profile URL to analyze it for fake indicators</p>
+            
+            <div class="platform-icons">
+                <div class="platform-icon active" data-platform="instagram">
+                    <i class="fab fa-instagram"></i>
+                </div>
+                <div class="platform-icon" data-platform="facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </div>
+                <div class="platform-icon" data-platform="twitter">
+                    <i class="fab fa-twitter"></i>
+                </div>
+                <div class="platform-icon" data-platform="tiktok">
+                    <i class="fab fa-tiktok"></i>
+                </div>
+            </div>
+            
+            <form id="profile-check-form">
+                <div class="input-group">
+                    <label for="profile-url">Profile URL</label>
+                    <input type="url" id="profile-url" placeholder="https://www.instagram.com/username" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="additional-context">Additional Context (Optional)</label>
+                    <input type="text" id="additional-context" placeholder="Why are you suspicious of this profile?">
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%;">
+                    <i class="fas fa-search"></i> Analyze Profile
+                </button>
+            </form>
+            
+            <div class="results" id="results">
+                <h3 style="margin-bottom: 20px;">Analysis Results</h3>
+                
+                <div class="result-card">
+                    <div class="result-header">
+                        <h4>Profile Authenticity Score</h4>
+                        <div class="profile-score score-high">78% Fake</div>
+                    </div>
+                    <p>This profile shows several indicators commonly associated with fake accounts.</p>
+                    
+                    <div class="risk-factors">
+                        <div class="risk-factor">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <span>Profile has very few friends/followers</span>
+                        </div>
+                        <div class="risk-factor">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <span>Account was created very recently</span>
+                        </div>
+                        <div class="risk-factor">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <span>Limited personal information provided</span>
+                        </div>
+                        <div class="risk-factor">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <span>Profile picture appears stock or stolen</span>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-outline report-button" id="report-profile">
+                        <i class="fas fa-flag"></i> Report Profile
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Name</h3>
+                        <p>Saif</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Contact Number</h3>
+                        <p>8123769345</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Email ID</h3>
+                        <p>hsaifullasaif</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="logo">
+                <i class="fas fa-shield-alt"></i>
+                <span>Fake Profile Detect</span>
+            </div>
+            
+            <p>Protecting users from fake identities and online scams</p>
+            
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+            
+            <p>&copy; 2025 Fake Profile Detect. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/api.js"></script>
+</body>
+</html>
